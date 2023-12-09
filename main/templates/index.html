@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="flex justify-center items-center min-h-screen bg-gray-100">
+    <div class="text-center p-6 max-w-md mx-auto bg-white rounded-xl shadow-md">
+        <a href="{{ url_for('bp.view_menus') }}"><button>Saved Recipes</button></a>
+        <h1 class="text-2xl font-bold text-gray-900">Meal Planning</h1>
+        <p>A shopping list of all your saved recipes:</p>
+        <label for="cookbook_categories">Select a Cookbook:</label>
+        <select class="p-0.5" name="cookbook_categories" id="cookbook_categories">
+            <option class="p-0.5" value="" selected>Cookbooks</option>
+            {% for cookbook in cookbooks %}
+            <option class="p-0.5" value="{{ cookbook['CookbookName'] }}">{{ cookbook['CookbookName'] }}</option>
+            {% endfor %}
+        </select>
+        <div>
+            <label for="recipe_dropdown">Select a Recipe:</label>
+            <select id="recipe_dropdown">
+                <option value="" selected>Recipes</option>
+            </select>
+        </div>
+        <div id="ingredients_list">
+        </div>
+    </div>
+</main>
+
+<script src="{{ url_for('static', filename='scripts/scripts.js') }}"></script>
+
+{% endblock %}
+
+

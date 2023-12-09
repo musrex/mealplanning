@@ -1,0 +1,8 @@
+DELIMITER $$
+
+CREATE PROCEDURE GetCookbooks()
+BEGIN
+    SELECT * FROM Cookbook;
+END$$CookbookName
+
+DELIMITER ;

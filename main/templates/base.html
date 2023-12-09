@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Holiday Meal Plan</title>
+        <meta charset="utf-8" />
+        <link 
+            rel="stylesheet"
+            href="{{ url_for('static', filename='dist/styles.css') }}" 
+        />
+    </head>
+
+    <body>
+        {% block content %}
+        {% endblock %}
+    </body>
+
+    <footer>
+        <p>Leandro Lopez</p>
+        <p>Merrimack College</p>
+        <p>Database Principles</p>
+    </footer>
+</html>
